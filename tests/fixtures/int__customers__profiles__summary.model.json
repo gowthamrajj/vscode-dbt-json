@@ -1,47 +1,46 @@
 {
-    "type": "int_select_model",
+    "type": "int_join_models",
     "group": "customers",
     "topic": "profiles",
     "name": "summary",
     "from": {
-        "model": "stg__customers__profiles__clean"
+        "model": "stg__customers__profiles__clean",
+        "join": [
+            {
+                "model": "stg__sales__orders__standardized",
+                "type": "left",
+                "on": {
+                    "and": [
+                        "customer_id"
+                    ]
+                }
+            }
+        ]
     },
     "select": [
         {
-            "name": "customer_id",
-            "expr": "customer_id",
-            "type": "dim",
-            "description": "Unique customer identifier"
-        },
-        {
-            "name": "customer_name",
-            "expr": "customer_name",
-            "type": "dim",
-            "description": "Customer full name"
-        },
-        {
-            "name": "first_name",
-            "expr": "first_name",
-            "type": "dim",
-            "description": "Customer first name"
-        },
-        {
-            "name": "last_name",
-            "expr": "last_name",
-            "type": "dim",
-            "description": "Customer last name"
+            "type": "dims_from_model",
+            "model": "stg__customers__profiles__clean"
         },
         {
             "name": "customer_segment",
-            "expr": "CASE WHEN CAST(customer_id AS INTEGER) <= 10 THEN 'VIP' WHEN CAST(customer_id AS INTEGER) <= 50 THEN 'Regular' ELSE 'New' END",
+            "expr": "{{ customer_segment() }}",
             "type": "dim",
-            "description": "Customer segment classification"
+            "description": "Customer segment classification based on order count",
+            "exclude_from_group_by": true
         },
         {
             "name": "has_last_name",
-            "expr": "last_name IS NOT NULL",
+            "expr": "stg__customers__profiles__clean.customer_last_name IS NOT NULL",
             "type": "dim",
-            "description": "Whether customer provided a last name"
+            "description": "Whether customer provided a last name",
+            "exclude_from_group_by": true
+        },
+        {
+            "name": "total_orders",
+            "expr": "COUNT(stg__sales__orders__standardized.order_id)",
+            "type": "fct",
+            "description": "Total number of orders placed by customer"
         }
     ]
 }

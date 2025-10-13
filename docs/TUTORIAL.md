@@ -65,15 +65,15 @@ Before creating models, we need to define sources for our raw data.
    - Under "Actions", click on "Create Source".
    - In the extension UI, fill the form:
      - **Select Project**: `jaffle_shop`
-     - **Select Trino Catalog**: `memory`
+     - **Select Trino Catalog**: `development`
      - **Select Trino Schema**: `jaffle_shop_dev_seeds`
      - **Select Trino Table**: `raw_customers`
 
 2. **Incremental source building**:
 
-   - **First table**: Creates `memory__jaffle_shop_dev_seeds.source.json` with `raw_customers` details
+   - **First table**: Creates `development__jaffle_shop_dev_seeds.source.json` with `raw_customers` details
    - **Same schema, different table**: Updates the same JSON file, adds `raw_orders` details
-   - **Different schema**: Creates a new `memory__other_schema.source.json` file
+   - **Different schema**: Creates a new `development__other_schema.source.json` file
    - Each save regenerates the corresponding `.yml` file
 
 3. **Extension workflow**:
@@ -82,11 +82,11 @@ Before creating models, we need to define sources for our raw data.
    - **Step 2**: Create source for `raw_orders` → Updates same JSON file
    - **Step 3**: Create source for `raw_products` → Updates same JSON file
    - **Step 4**: Continue for other tables in the schema
-   - **Each save**: Regenerates `memory__jaffle_shop_dev_seeds.source.yml`
+   - **Each save**: Regenerates `development__jaffle_shop_dev_seeds.source.yml`
 
    > **Note**: One source file per schema, built incrementally table by table.
    >
-   > For this tutorial, the example project already has all tables added to `memory__jaffle_shop_dev_seeds.source.json`, so you can proceed directly to creating models.
+   > For this tutorial, the example project already has all tables added to `development__jaffle_shop_dev_seeds.source.json`, so you can proceed directly to creating models.
 
 4. **Update manifest** after creating sources:
 
@@ -186,7 +186,7 @@ Let's clean up the raw customer data using the DJ extension's UI.
      "name": "clean",
      "materialized": "ephemeral",
      "from": {
-       "source": "memory__jaffle_shop_dev_seeds.raw_customers"
+       "source": "development__jaffle_shop_dev_seeds.raw_customers"
      },
      "select": [
        {
@@ -212,7 +212,7 @@ Let's clean up the raw customer data using the DJ extension's UI.
 **What happened?** The DJ extension:
 
 - Used the manifest.json to provide IntelliSense for available sources
-- Showed `memory__jaffle_shop_dev_seeds.raw_customers` as an available source option
+- Showed `development__jaffle_shop_dev_seeds.raw_customers` as an available source option
 - Converted your JSON configuration into proper dbt SQL
 - Selected data from the raw_customers source with renamed columns
 - Created a clean staging table ready for downstream use

@@ -25,7 +25,7 @@ docs/example/                    # You are here!
 ├── profiles.yml                # Trino connection settings
 ├── models/                     # All dbt models (16 total)
 │   ├── groups.yml              # Business group definitions
-│   ├── sources/memory/         # Raw data source definitions
+│   ├── sources/development/         # Raw data source definitions
 │   ├── staging/                # Clean & standardize (6 models)
 │   ├── intermediate/           # Business logic (4 models)
 │   └── marts/                  # Analytics ready (6 models)
@@ -126,6 +126,12 @@ This project demonstrates **4 core DJ model types** with **16 working models** a
 - **`mart_join_models`** (1 model) - Comprehensive 360-degree business views
 
 ## Running the Models
+
+### Prerequisites
+
+This project uses a `development` catalog in Trino. Make sure it's configured before running. See the [Trino Local Setup Guide](../TRINO_LOCAL_SETUP.md) for detailed instructions.
+
+### Commands
 
 ```bash
 # Run all models

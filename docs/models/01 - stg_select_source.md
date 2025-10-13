@@ -59,7 +59,7 @@ Here's how to create a staging model for this data:
   "name": "clean",
   "materialized": "ephemeral",
   "from": {
-    "source": "memory__jaffle_shop_dev_seeds.raw_customers"
+    "source": "development__jaffle_shop_dev_seeds.raw_customers"
   },
   "select": [
     {
@@ -118,7 +118,7 @@ df811427-cdce-45d3-8067-78b53a4c98c2,32488100-c957-4d6c-a64b-8d843106fcff,2016-0
   "name": "standardized",
   "materialized": "ephemeral",
   "from": {
-    "source": "memory__jaffle_shop_dev_seeds.raw_orders"
+    "source": "development__jaffle_shop_dev_seeds.raw_orders"
   },
   "select": [
     {

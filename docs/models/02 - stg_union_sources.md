@@ -66,9 +66,9 @@ Let's create a unified view of store locations from different regional databases
   "name": "all_locations",
   "materialized": "ephemeral",
   "from": {
-    "source": "memory__jaffle_shop_north.raw_stores",
+    "source": "development__jaffle_shop_north.raw_stores",
     "union": {
-      "sources": ["memory__jaffle_shop_south.raw_stores"]
+      "sources": ["development__jaffle_shop_south.raw_stores"]
     }
   },
   "select": [
@@ -140,9 +140,9 @@ A more complex scenario involves combining order data from different systems tha
   "name": "unified_orders",
   "materialized": "incremental",
   "from": {
-    "source": "memory__jaffle_shop_current.raw_orders",
+    "source": "development__jaffle_shop_current.raw_orders",
     "union": {
-      "sources": ["memory__jaffle_shop_legacy.raw_orders"]
+      "sources": ["development__jaffle_shop_legacy.raw_orders"]
     }
   },
   "select": [
