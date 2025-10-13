@@ -25,7 +25,7 @@ docs/example/                    # You are here!
 ├── profiles.yml                # Trino connection settings
 ├── models/                     # All dbt models (16 total)
 │   ├── groups.yml              # Business group definitions
-│   ├── sources/memory/         # Raw data source definitions
+│   ├── sources/development/         # Raw data source definitions
 │   ├── staging/                # Clean & standardize (6 models)
 │   ├── intermediate/           # Business logic (4 models)
 │   └── marts/                  # Analytics ready (6 models)
