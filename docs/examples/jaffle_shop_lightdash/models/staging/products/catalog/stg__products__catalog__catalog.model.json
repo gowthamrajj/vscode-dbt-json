@@ -54,8 +54,9 @@
                     {
                         "name": "metric_product_price_cents_sum",
                         "type": "sum",
-                        "group_label": "Product Fields",
-                        "label": "Product Price Sum (cents)"
+                        "group_label": "Product Metrics",
+                        "label": "Product Price Sum (cents)",
+                        "ai_hint": "Use this for internal calculations or when cent precision is required"
                     }
                 ]
             }
@@ -70,8 +71,9 @@
                     {
                         "name": "metric_product_price_dollars_sum",
                         "type": "sum",
-                        "group_label": "Product Fields",
-                        "label": "Product Price Sum (cents)"
+                        "group_label": "Product Metrics",
+                        "label": "Total Product Value",
+                        "ai_hint": "Use this metric to calculate total product catalog value or analyze average product pricing"
                     }
                 ]
             }

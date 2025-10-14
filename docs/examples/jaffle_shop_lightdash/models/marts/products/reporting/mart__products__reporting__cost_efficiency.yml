@@ -93,9 +93,11 @@ models:
             hidden: true
           metrics:
             metric_product_price_dollars_sum:
+              ai_hint: Use this metric to calculate total product catalog value or analyze
+                average product pricing
               type: sum
-              label: Product Price Sum (cents)
-              group_label: Product Fields
+              label: Total Product Value
+              group_label: Product Metrics
       - name: product_sku
         data_type: varchar
         description: Associated product SKU

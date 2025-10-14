@@ -53,6 +53,12 @@ models:
           dimension:
             label: Order ID
             group_label: Order Fields
+          metrics:
+            metric_order_count:
+              ai_hint: Use this to count total orders or analyze order volume trends over time
+              type: count_distinct
+              label: Number of Orders
+              group_label: Order Metrics
       - name: order_total_cents
         data_type: varchar
         description: Total order amount in cents
@@ -64,6 +70,19 @@ models:
             type: number
             label: Order Total (in cents)
             group_label: Order Fields
+          metrics:
+            metric_order_total_sum:
+              ai_hint: Use this metric to calculate total revenue including tax. This is the
+                key metric for overall sales performance
+              type: sum
+              label: Total Revenue
+              group_label: Order Metrics
+            metric_order_total_average:
+              ai_hint: Use this to understand average order value (AOV) including tax, a key
+                e-commerce metric
+              type: average
+              label: Average Order Value (AOV)
+              group_label: Order Metrics
       - name: ordered_at
         data_type: varchar
         description: Timestamp when order was placed
@@ -108,6 +127,17 @@ models:
             type: number
             label: Order Subtotal (in cents)
             group_label: Order Fields
+          metrics:
+            metric_subtotal_total:
+              ai_hint: Use this to calculate total sales revenue before tax across all orders
+              type: sum
+              label: Total Order Subtotal
+              group_label: Order Metrics
+            metric_subtotal_average:
+              ai_hint: Use this to understand the typical order value before tax
+              type: average
+              label: Average Order Subtotal
+              group_label: Order Metrics
       - name: tax_paid_cents
         data_type: varchar
         description: Tax amount paid in cents
@@ -119,6 +149,13 @@ models:
             type: number
             label: Tax Paid (in cents)
             group_label: Order Fields
+          metrics:
+            metric_tax_collected:
+              ai_hint: Use this to calculate total tax collected for compliance and reporting
+                purposes
+              type: sum
+              label: Total Tax Collected
+              group_label: Order Metrics
       - name: portal_partition_monthly
         data_type: date
         description: Monthly Partition Column

@@ -77,9 +77,10 @@ models:
             id: model.jaffle_shop_lightdash.stg__products__catalog__catalog
           metrics:
             metric_product_price_cents_sum:
+              ai_hint: Use this for internal calculations or when cent precision is required
               type: sum
               label: Product Price Sum (cents)
-              group_label: Product Fields
+              group_label: Product Metrics
       - name: product_price_dollars
         data_type: varchar
         description: Product price in dollars
@@ -89,9 +90,11 @@ models:
             id: model.jaffle_shop_lightdash.stg__products__catalog__catalog
           metrics:
             metric_product_price_dollars_sum:
+              ai_hint: Use this metric to calculate total product catalog value or analyze
+                average product pricing
               type: sum
-              label: Product Price Sum (cents)
-              group_label: Product Fields
+              label: Total Product Value
+              group_label: Product Metrics
       - name: product_sku
         data_type: varchar
         description: Product SKU identifier

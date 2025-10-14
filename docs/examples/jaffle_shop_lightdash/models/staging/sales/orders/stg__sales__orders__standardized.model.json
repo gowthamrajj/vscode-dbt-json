@@ -17,7 +17,16 @@
                 "dimension": {
                     "group_label": "Order Fields",
                     "label": "Order ID"
-                }
+                },
+                "metrics": [
+                    {
+                        "name": "metric_order_count",
+                        "type": "count_distinct",
+                        "group_label": "Order Metrics",
+                        "label": "Number of Orders",
+                        "ai_hint": "Use this to count total orders or analyze order volume trends over time"
+                    }
+                ]
             }
         },
         {
@@ -80,7 +89,23 @@
                     "group_label": "Order Fields",
                     "label": "Order Subtotal (in cents)",
                     "type": "number"
-                }
+                },
+                "metrics": [
+                    {
+                        "name": "metric_subtotal_total",
+                        "type": "sum",
+                        "group_label": "Order Metrics",
+                        "label": "Total Order Subtotal",
+                        "ai_hint": "Use this to calculate total sales revenue before tax across all orders"
+                    },
+                    {
+                        "name": "metric_subtotal_average",
+                        "type": "average",
+                        "group_label": "Order Metrics",
+                        "label": "Average Order Subtotal",
+                        "ai_hint": "Use this to understand the typical order value before tax"
+                    }
+                ]
             }
         },
         {
@@ -93,7 +118,16 @@
                     "group_label": "Order Fields",
                     "label": "Tax Paid (in cents)",
                     "type": "number"
-                }
+                },
+                "metrics": [
+                    {
+                        "name": "metric_tax_collected",
+                        "type": "sum",
+                        "group_label": "Order Metrics",
+                        "label": "Total Tax Collected",
+                        "ai_hint": "Use this to calculate total tax collected for compliance and reporting purposes"
+                    }
+                ]
             }
         },
         {
@@ -106,7 +140,23 @@
                     "group_label": "Order Fields",
                     "label": "Order Total (in cents)",
                     "type": "number"
-                }
+                },
+                "metrics": [
+                    {
+                        "name": "metric_order_total_sum",
+                        "type": "sum",
+                        "group_label": "Order Metrics",
+                        "label": "Total Revenue",
+                        "ai_hint": "Use this metric to calculate total revenue including tax. This is the key metric for overall sales performance"
+                    },
+                    {
+                        "name": "metric_order_total_average",
+                        "type": "average",
+                        "group_label": "Order Metrics",
+                        "label": "Average Order Value (AOV)",
+                        "ai_hint": "Use this to understand average order value (AOV) including tax, a key e-commerce metric"
+                    }
+                ]
             }
         }
     ]

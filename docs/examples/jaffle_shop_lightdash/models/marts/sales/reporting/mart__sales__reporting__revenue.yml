@@ -80,6 +80,12 @@ models:
             type: string
             label: Order ID
             group_label: Order Fields
+          metrics:
+            metric_order_count:
+              ai_hint: Use this to count total orders or analyze order volume trends over time
+              type: count_distinct
+              label: Number of Orders
+              group_label: Order Metrics
       - name: order_month
         data_type: varchar
         description: Order month
@@ -165,6 +171,13 @@ models:
             type: string
             label: Subtotal Dollars
             hidden: true
+          metrics:
+            metric_subtotal_revenue:
+              ai_hint: Use this to analyze pre-tax revenue for reporting and comparison across
+                tax jurisdictions
+              type: sum
+              label: Total Subtotal Revenue
+              group_label: Revenue Metrics
       - name: tax_dollars
         data_type: varchar
         description: Tax amount in dollars
@@ -176,6 +189,12 @@ models:
             type: string
             label: Tax Dollars
             hidden: true
+          metrics:
+            metric_total_tax:
+              ai_hint: Use this for tax reporting and compliance analysis
+              type: sum
+              label: Total Tax Collected
+              group_label: Revenue Metrics
       - name: total_dollars
         data_type: varchar
         description: Total order amount in dollars
@@ -187,6 +206,19 @@ models:
             type: string
             label: Total Dollars
             hidden: true
+          metrics:
+            metric_total_revenue:
+              ai_hint: Use this as the primary revenue metric for financial reporting and
+                dashboard KPIs
+              type: sum
+              label: Total Revenue
+              group_label: Revenue Metrics
+            metric_avg_order_value:
+              ai_hint: Use this to track AOV trends over time, a key e-commerce performance
+                indicator
+              type: average
+              label: Average Order Value (AOV)
+              group_label: Revenue Metrics
       - name: portal_partition_monthly
         data_type: date
         description: Monthly Partition Column
