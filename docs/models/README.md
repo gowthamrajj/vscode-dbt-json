@@ -426,7 +426,7 @@ Understanding the relationship between model types:
 
 ## Working Example Project
 
-**Want to see these model types in action?** Check out the **[Jaffle Shop Example Project](../example/README.md)** which demonstrates working models across a realistic business scenario.
+**Want to see these model types in action?** Check out the **[Jaffle Shop Example Project](../examples/jaffle_shop/README.md)** which demonstrates working models across a realistic business scenario.
 
 ---
 

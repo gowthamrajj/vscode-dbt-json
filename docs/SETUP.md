@@ -177,7 +177,7 @@ export LIGHTDASH_PROJECT=<lightdash-project> # The UUID for your project.
 **Ready to build your first models?**
 
 1. **[Follow the Tutorial](TUTORIAL.md)** - Build your first models step-by-step with the example dbt project based on jaffle shop data from dbt docs
-2. **[Explore the Example Project](example/README.md)** - See what's possible with the example dbt project based on jaffle shop data from dbt docs
+2. **[Explore the Example Project](examples/jaffle_shop/README.md)** - See what's possible with the example dbt project based on jaffle shop data from dbt docs
 3. **[Browse Model Types](models/README.md)** - Learn about all 11 model types with the example dbt project based on jaffle shop data from dbt docs
 
 ## Troubleshooting
@@ -198,7 +198,7 @@ export LIGHTDASH_PROJECT=<lightdash-project> # The UUID for your project.
 - **Local Lightdash Setup**: See [LIGHTDASH_LOCAL_SETUP.md](LIGHTDASH_LOCAL_SETUP.md)
 - **Lightdash Configuration**: See [LIGHTDASH_CONFIGURATION.md](LIGHTDASH_CONFIGURATION.md)
 - **Development Setup**: See [DEVELOPMENT_SETUP.md](../DEVELOPMENT_SETUP.md)
-- **Example Project Issues**: Check [example/README.md](example/README.md)
+- **Example Project Issues**: Check [examples/jaffle_shop/README.md](examples/jaffle_shop/README.md)
 
 ---
 
