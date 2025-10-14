@@ -1,0 +1,46 @@
+{
+    "type": "int_join_models",
+    "group": "customers",
+    "topic": "profiles",
+    "name": "summary",
+    "from": {
+        "model": "stg__customers__profiles__clean",
+        "join": [
+            {
+                "model": "stg__sales__orders__standardized",
+                "type": "left",
+                "on": {
+                    "and": [
+                        "customer_id"
+                    ]
+                }
+            }
+        ]
+    },
+    "select": [
+        {
+            "type": "dims_from_model",
+            "model": "stg__customers__profiles__clean"
+        },
+        {
+            "name": "customer_segment",
+            "expr": "{{ customer_segment() }}",
+            "type": "dim",
+            "description": "Customer segment classification based on order count",
+            "exclude_from_group_by": true
+        },
+        {
+            "name": "has_last_name",
+            "expr": "stg__customers__profiles__clean.customer_last_name IS NOT NULL",
+            "type": "dim",
+            "description": "Whether customer provided a last name",
+            "exclude_from_group_by": true
+        },
+        {
+            "name": "total_orders",
+            "expr": "COUNT(stg__sales__orders__standardized.order_id)",
+            "type": "fct",
+            "description": "Total number of orders placed by customer"
+        }
+    ]
+}

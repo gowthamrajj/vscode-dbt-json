@@ -176,6 +176,7 @@ npm install -g @lightdash/cli
 export LIGHTDASH_URL=your-lightdash-url
 export LIGHTDASH_PREVIEW_NAME=your-preview-name
 export LIGHTDASH_PROJECT=your-project-uuid
+export LIGHTDASH_TRINO_HOST=your-trino-host # Optional. Uses host from profiles.yml by default. Set this if running Lightdash and Trino together in Docker locally.
 ```
 
 > **Local Setup**: If you want to setup Lightdash locally, see [LIGHTDASH_LOCAL_SETUP.md](docs/LIGHTDASH_LOCAL_SETUP.md).
@@ -221,7 +222,7 @@ DJ supports the following model types:
 ### New to DJ?
 
 1. **[Tutorial](docs/TUTORIAL.md)** - Step-by-step guide with real data
-2. **[Example Project](docs/example/README.md)** - Complete example project with jaffle shop implementation
+2. **[Example Project](docs/examples/jaffle_shop/README.md)** - Complete example project with jaffle shop implementation
 
 ### Need Help?
 
