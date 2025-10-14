@@ -229,10 +229,10 @@ export class Lightdash implements DJService {
         this.coder.log.info(`Searching for URL in combined output`);
 
         const urlMatch = combinedOutput.match(
-          /Project updated on\s+(https?:\/\/[^\s]+\/projects\/[^\s]+)/i,
+          /(Project updated on|New project created on)\s+(https?:\/\/[^\s]+\/projects\/[^\s]+)/i,
         );
         if (urlMatch) {
-          const previewUrl = urlMatch[1].trim();
+          const previewUrl = urlMatch[2].trim();
           this.coder.log.info(`Found preview URL: ${previewUrl}`);
           resolve(previewUrl);
           return;
