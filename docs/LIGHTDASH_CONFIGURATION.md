@@ -22,7 +22,7 @@ You can override the auto-detection by setting these VS Code configuration optio
 
 - **Type**: `string`
 - **Description**: Custom path to the dbt project directory (relative to workspace root)
-- **Example**: `"docs/example"` for projects where dbt is in a subdirectory
+- **Example**: `"docs/examples/jaffle_shop"` for projects where dbt is in a subdirectory
 
 #### `dj.lightdashProfilesPath`
 
@@ -34,11 +34,11 @@ You can override the auto-detection by setting these VS Code configuration optio
 
 ### Example 1: dbt project in subdirectory
 
-If your dbt project is located at `docs/example/` instead of the default `dags/dbt/`:
+If your dbt project is located at `docs/examples/jaffle_shop/` instead of the default `dags/dbt/`:
 
 ```json
 {
-  "dj.lightdashProjectPath": "docs/example"
+  "dj.lightdashProjectPath": "docs/examples/jaffle_shop"
 }
 ```
 
@@ -80,7 +80,7 @@ Add to your workspace or user `settings.json`:
 
 ```json
 {
-  "dj.lightdashProjectPath": "docs/example",
+  "dj.lightdashProjectPath": "docs/examples/jaffle_shop",
   "dj.lightdashProfilesPath": "profiles"
 }
 ```
@@ -91,7 +91,7 @@ Create/edit `.vscode/settings.json` in your workspace:
 
 ```json
 {
-  "dj.lightdashProjectPath": "docs/example"
+  "dj.lightdashProjectPath": "docs/examples/jaffle_shop"
 }
 ```
 

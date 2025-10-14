@@ -19,13 +19,13 @@ This project showcases a complete analytics pipeline with:
 ## Project Structure
 
 ```text
-docs/example/                    # You are here!
-├── ../TUTORIAL.md               # Step-by-step learning guide
+docs/examples/jaffle_shop/      # You are here!
+├── ../TUTORIAL.md              # Step-by-step learning guide
 ├── dbt_project.yml             # dbt project configuration
 ├── profiles.yml                # Trino connection settings
 ├── models/                     # All dbt models (16 total)
 │   ├── groups.yml              # Business group definitions
-│   ├── sources/development/         # Raw data source definitions
+│   ├── sources/development/    # Raw data source definitions
 │   ├── staging/                # Clean & standardize (6 models)
 │   ├── intermediate/           # Business logic (4 models)
 │   └── marts/                  # Analytics ready (6 models)

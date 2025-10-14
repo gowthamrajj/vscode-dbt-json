@@ -7,8 +7,8 @@ import { DbtProjectManifest } from '../src/shared/dbt/types';
  * Updates test fixtures from a dbt project
  *
  * Usage: npx ts-node tests/update-fixtures.ts [dbt-project-path]
- * Example: npx ts-node tests/update-fixtures.ts docs/example
- * Default: Uses 'docs/example' if no path provided
+ * Example: npx ts-node tests/update-fixtures.ts docs/examples/jaffle_shop
+ * Default: Uses 'docs/examples/jaffle_shop' if no path provided
  *
  * This script:
  * 1. Copies all *.model.json, *.sql, *.yml files from the project
@@ -16,7 +16,7 @@ import { DbtProjectManifest } from '../src/shared/dbt/types';
  * 3. Ensures tests validate JSON → SQL & YML conversion across all models
  */
 function main() {
-  const EXAMPLE_PROJECT_PATH = 'docs/example';
+  const EXAMPLE_PROJECT_PATH = 'docs/examples/jaffle_shop';
 
   const dbtProjectPath = process.argv[2] ?? EXAMPLE_PROJECT_PATH;
 

@@ -221,7 +221,7 @@ DJ supports the following model types:
 ### New to DJ?
 
 1. **[Tutorial](docs/TUTORIAL.md)** - Step-by-step guide with real data
-2. **[Example Project](docs/example/README.md)** - Complete example project with jaffle shop implementation
+2. **[Example Project](docs/examples/jaffle_shop/README.md)** - Complete example project with jaffle shop implementation
 
 ### Need Help?
 

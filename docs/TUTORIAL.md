@@ -19,7 +19,7 @@ Let's start with the example project that has all the jaffle shop data ready.
 1. **Navigate to the example project**:
 
 ```bash
-cd docs/example/
+cd docs/examples/jaffle_shop/
 # This folder contains everything you need
 ```
 

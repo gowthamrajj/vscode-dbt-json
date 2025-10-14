@@ -1,0 +1,18 @@
+{
+    "dj.airflowGenerateDags": false,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.model.json"
+            ],
+            "url": ".dj/schemas/model.schema.json"
+        },
+        {
+            "fileMatch": [
+                "*.source.json"
+            ],
+            "url": ".dj/schemas/source.schema.json"
+        }
+    ],
+    "dbt.enableNewLineagePanel": true
+}

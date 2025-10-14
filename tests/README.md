@@ -27,7 +27,7 @@ tests/
 
 ## Fixtures
 
-**What are fixtures?** Test data files that represent real, working examples from the `docs/example` project.
+**What are fixtures?** Test data files that represent real, working examples from the `docs/examples/jaffle_shop` project.
 
 **Coverage:** Staging, intermediate, and mart models that test all DJ framework capabilities.
 
@@ -38,7 +38,7 @@ tests/
 The example project must be parsed/compiled first:
 
 ```bash
-cd docs/example
+cd docs/examples/jaffle_shop
 dbt parse
 ```
 
@@ -69,7 +69,7 @@ npm run fixtures:update && npm run test
 **Missing manifest.json:**
 
 ```bash
-cd docs/example
+cd docs/examples/jaffle_shop
 dbt parse
 npm run fixtures:update
 ```
